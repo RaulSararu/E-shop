@@ -1,0 +1,50 @@
+.cartItem {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.cartItemImage {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.cartItemDetails {
+  flex-grow: 1;
+}
+
+.quantityButtons {
+  display: flex;
+  align-items: center;
+}
+
+.quantityButton {
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+
+.quantityButton:hover {
+  background-color: #005bb5;
+}
+
+.removeButton {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.removeButton:hover {
+  background-color: #ff1a1a;
+}

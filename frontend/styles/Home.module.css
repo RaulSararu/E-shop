@@ -1,0 +1,132 @@
+.container {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  margin: 20px 0;
+  font-size: 2.5rem;
+  color: white;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.searchBar {
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.sortButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.sortButton:hover {
+  background-color: #005bb5;
+}
+
+.categorySelect {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.productContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.product {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 400px; /* Setăm o înălțime fixă pentru cardurile de produse */
+}
+
+.product:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.productImage {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.product h3 {
+  margin: 15px;
+  font-size: 1.2rem;
+  color: #1e1e2f;
+}
+
+.productDescription {
+  margin: 0 15px;
+  color: #666;
+  font-size: 0.9rem;
+  height: 90px; /* Setăm o înălțime fixă pentru descriere */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5; /* Limităm descrierea la 5 rânduri */
+  -webkit-box-orient: vertical;
+}
+
+.productPrice {
+  margin: 15px 15px 5px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #1e1e2f;
+}
+
+.addButton {
+  display: block;
+  width: calc(100% - 30px);
+  margin: 0 15px 15px;
+  padding: 10px;
+  font-size: 1rem;
+  text-align: center;
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.addButton:hover {
+  background-color: #e55337;
+}

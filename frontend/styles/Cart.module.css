@@ -1,0 +1,49 @@
+.container {
+  padding: 40px;
+  background-color: #f8f8f8;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #1e1e2f;
+}
+
+.cartItems {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+}
+
+.totalPrice {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  color: #1e1e2f;
+}
+
+.checkoutButton {
+  padding: 15px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.checkoutButton:hover {
+  background-color: #e55337;
+}
