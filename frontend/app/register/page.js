@@ -14,26 +14,18 @@ export default function Register() {
     e.preventDefault();
 
     try {
-      // Obținem utilizatorii existenți din localStorage
-      const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
-      const userExists = existingUsers.find((user) => user.email === email);
+      const response = await fetch('http://localhost:5000/api/users/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username: email, password }),
+      });
 
-      if (userExists) {
-        setError('User already exists!');
-        return;
+      if (response.ok) {
+        router.push('/');
+      } else {
+        const errorData = await response.json();
+        setError(errorData.error);
       }
-
-      // Creăm un utilizator nou și îl adăugăm la lista de utilizatori
-      const newUser = { email, password };
-      const updatedUsers = [...existingUsers, newUser];
-      localStorage.setItem('users', JSON.stringify(updatedUsers));
-
-      // Simulăm autentificarea după înregistrare
-      const token = 'fake-token';
-      localStorage.setItem('token', token);
-      localStorage.setItem('user', JSON.stringify({ email }));
-
-      router.push('/');
     } catch (err) {
       console.error('Register failed:', err);
       setError('Something went wrong. Please try again later.');
@@ -45,27 +37,24 @@ export default function Register() {
       <h1 className={styles.heading}>Register</h1>
       <form onSubmit={handleRegister} className={styles.form}>
         <label className={styles.formLabel}>Email:</label>
-        <input 
-          type="email" 
+        <input
+          type="email"
           className={styles.formInput}
-          value={email} 
-          onChange={(e) => setEmail(e.target.value)} 
-          required 
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
         />
         <label className={styles.formLabel}>Password:</label>
-        <input 
-          type="password" 
+        <input
+          type="password"
           className={styles.formInput}
-          value={password} 
-          onChange={(e) => setPassword(e.target.value)} 
-          required 
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
         />
         {error && <p className={styles.error}>{error}</p>}
         <button type="submit" className={styles.formButton}>Register</button>
       </form>
-      <p className={styles.loginText}>
-        Already have an account? <a href="/login" className={styles.loginLink}>Login here</a>
-      </p>
     </div>
   );
 }
