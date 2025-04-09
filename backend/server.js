@@ -1,14 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const cors = require('cors'); // Importă pachetul cors
+const cors = require('cors'); 
 const userRoutes = require('./routes/userRoutes');
 const app = express();
 
-// Utilizează middleware-ul CORS
+
 app.use(cors({
-  origin: 'http://localhost:3000', // Permite cererile doar de la acest origin
-  methods: 'GET,POST,PUT,DELETE', // Permite aceste metode
-  allowedHeaders: 'Content-Type,Authorization' // Permite aceste anteturi
+  origin: 'http://localhost:3000', 
+  methods: 'GET,POST,PUT,DELETE', 
+  allowedHeaders: 'Content-Type,Authorization' 
 }));
 
 mongoose.connect('mongodb://localhost:27017/my_ecommerce_db', {
